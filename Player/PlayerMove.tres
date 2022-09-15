@@ -1,0 +1,22 @@
+[gd_resource type="Animation" format=2]
+
+[resource]
+resource_name = "Move"
+length = 5.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("..")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ Vector3( 0, 0, 1 ), Vector3( 0, 1, 0 ), false, 4, 0.785398, true ],
+"method": "move_and_slide"
+}, {
+"args": [ Vector3( 0, 0, 10 ), Vector3( 0, 1, 0 ), false, 4, 0.785398, true ],
+"method": "move_and_slide"
+} ]
+}
