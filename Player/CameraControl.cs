@@ -1,35 +1,116 @@
 using Godot;
 using System;
+using System.Runtime;
 
-public class CameraControl : Spatial
+public partial class CameraControl : Node3D
 {
-  Spatial player;
+  MAIN_GUY player;
+	Camera3D playerCamera;
   Vector2 inp;
+	Vector3 targetRotation = Vector3.Zero;
+	Vector3 initialPosition, initialRotation;
+	Timer moveTimer;
+	bool fullControl = false;
+	[Export]
+	string intent = "";
+	[Export]
+	int angleBound;
 
   // Called when the node enters the scene tree for the first time.
   public override void _Ready() {
-    player = GetParent<Spatial>();
-    SetAsToplevel(true);
+		player = GetParent<MAIN_GUY>();
+		playerCamera = GetNode<Camera3D>(new NodePath("Camera3D"));
+		moveTimer = GetNode<Timer>(new NodePath("MoveTimer"));
+		initialPosition = playerCamera.Position; // Set in Editor
+		initialRotation = Rotation;
+		playerCamera.Current = true;
+		TopLevel = true;
   }
 
-//  // Called every frame. 'delta' is the elapsed time since the previous frame.
-//  public override void _Process(float delta)
-//  {
-//      
-//  }
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(double delta) {
+		if (moveTimer.TimeLeft > 0) {
+			float adjustment = (float)delta * ProjectSettings.GetSetting("physics/common/physics_ticks_per_second",  60).As<int>();
+			switch (intent)
+			{
+				case "reset":
+					RotateToTarget(targetRotation, 0.25f * adjustment);
+					break;
+				case "into_first":
+					TranslateCameraToTarget(Vector3.Zero, 0.25f * adjustment);
+					break;
+				case "into_third":
+					TranslateCameraToTarget(initialPosition, 0.25f * adjustment);
+					break;
+				default:
+					GD.PrintErr("Unhandled Camera Intent: " + intent);
+					moveTimer.Stop();
+					break;
+			}
+		} 
+	}
+
+	// Called in response to Input Events
   public override void _Input(InputEvent ie) {
-    // Discard anything we haven't set an action for
-    if (ie.IsActionType()) {
-      if (ie.GetActionStrength("cam_reset") > 0f) {
-        Rotation = player.Rotation;
-      }
-    }
+		// Discard anything we haven't set an action for
+		if (ie.IsActionType()) {
+			// Prevent hard button actions if one is already occuring
+			if (moveTimer.TimeLeft == 0f) {
+				if (ie.GetActionStrength("cam_reset") > 0f) {
+					moveTimer.Start(1.0d);
+					intent = "reset";
+					targetRotation = player.Rotation + initialRotation;
+				}
+				if (ie.GetActionStrength("cam_first_person") > 0f) {
+					moveTimer.Start(1.0d);
+					intent = fullControl ? "into_third" : "into_first";
+					fullControl = !fullControl;
+				}
+			}
+		}
   }
 
-  public override void _PhysicsProcess(float d) {
-    Translation = player.Translation + Vector3.Up;
-    inp = Input.GetVector("cam_right", "cam_left", "cam_down", "cam_up");
-    Rotation = Vector3.Left * (Rotation.x + inp.y * d * 8f) + Vector3.Up * (Rotation.y + inp.x * d * 8f);
-    //Rotation = Rotation + new Vector3(inp.y * d * 8f,inp.x * d * 8f, 0f);
+	// Called once per Physics Tickrate per second
+  public override void _PhysicsProcess(double d) {
+		Position = player.Position;
+		if (moveTimer.TimeLeft == 0f) {
+			inp = Input.GetVector("cam_right", "cam_left", "cam_up", "cam_down");
+			Rotation = 
+				Vector3.Right * Math.Clamp(
+					Rotation.X + inp.Y * (float)d * 8f,
+					DegreesToRadians(-75f),
+					DegreesToRadians(75f)
+				) +
+				Vector3.Up * (Rotation.Y + inp.X * (float)d * 8f);
+		}
   }
+
+	public static float DegreesToRadians(float degrees) {
+		return degrees * (Mathf.Pi / 180f);
+	}
+
+	public void IntentReset() {
+		if (intent == "into_third") {
+			player.ResetAction();
+		}
+		intent = "";
+	}
+
+	void RotateToTarget(Vector3 target, float delta) {
+		Rotation = Rotation.Lerp(target, delta);
+		if (Math.Abs(Rotation.Y - target.Y) < .001f) {
+			Rotation = target;
+			moveTimer.Stop();
+			IntentReset();
+		}
+	}
+
+	void TranslateCameraToTarget(Vector3 target, float delta) {
+		playerCamera.Position = playerCamera.Position.Lerp(target, delta);
+		if (playerCamera.Position.DistanceSquaredTo(target) < .001f) {
+			playerCamera.Position = target;
+			moveTimer.Stop();
+			IntentReset();
+		}
+	}
 }

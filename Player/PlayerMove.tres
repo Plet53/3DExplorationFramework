@@ -10,8 +10,8 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 4.9 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array( 0, 4.9 ),
+"transitions": PackedFloat32Array( 1, 1 ),
 "values": [ {
 "args": [ Vector3( 0, 0, 1 ), Vector3( 0, 1, 0 ), false, 4, 0.785398, true ],
 "method": "move_and_slide"

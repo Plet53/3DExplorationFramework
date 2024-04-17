@@ -1,0 +1,4 @@
+If player isn't moving, don't futz with the camera
+Camera should follow behind the player during movement, to its AngleBound, toggable via Camera Lock button. Intent: 'follow'
+First Person wanted, useful for scanning. Intent: 'zoom'
+
