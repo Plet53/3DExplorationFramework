@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://3o765yqi7cfs"]
+
+[ext_resource type="Script" path="res://Controllers/StageController.cs" id="1_lpuma"]
+[ext_resource type="PackedScene" uid="uid://btfyx0y1l7uoo" path="res://Maps/TESTMAP.tscn" id="2_4rnma"]
+[ext_resource type="PackedScene" uid="uid://l2x8kv78yjqw" path="res://Controllers/pause_menu.tscn" id="2_s64k3"]
+
+[node name="StageController" type="Node"]
+process_mode = 3
+script = ExtResource("1_lpuma")
+
+[node name="LoadedLevel" type="Node3D" parent="."]
+process_mode = 1
+
+[node name="TESTMAP" parent="LoadedLevel" instance=ExtResource("2_4rnma")]
+
+[node name="PauseMenuController" parent="." instance=ExtResource("2_s64k3")]
+visible = false

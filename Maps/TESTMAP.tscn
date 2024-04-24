@@ -165,6 +165,16 @@ mesh = SubResource("20")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cylinder/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_gvl22")
 
+[node name="HCylinder" type="MeshInstance3D" parent="."]
+transform = Transform3D(4.92404, 3.32038e-09, 0.868241, 0.868241, -3.7952e-08, -4.92404, 3.32038e-09, 5, -3.7952e-08, -1.15981, 4.94289, -18.1456)
+mesh = SubResource("20")
+skeleton = NodePath("../Cylinder")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="HCylinder"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HCylinder/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_gvl22")
+
 [node name="WallWAngles" type="MeshInstance3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 5.098, 10.434, 14.952)
 mesh = SubResource("24")
