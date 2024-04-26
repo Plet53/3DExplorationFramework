@@ -1,6 +1,6 @@
 [gd_resource type="VisualShader" load_steps=3 format=3 uid="uid://bwk81aclo0uf"]
 
-[ext_resource type="Texture2D" uid="uid://cjtw20xdt5cus" path="res://Maps/1MOrange.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://cjtw20xdt5cus" path="res://maps/1MOrange.png" id="1"]
 
 [sub_resource type="VisualShaderNodeTexture" id="1"]
 texture = ExtResource("1")

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mo2fvievorlh"
-path.s3tc="res://.godot/imported/skybox.png-788532a148ac9d8d92331274c1455618.s3tc.ctex"
+uid="uid://cjtw20xdt5cus"
+path.s3tc="res://.godot/imported/1MOrange.png-dd6bbc8c02bd8f4b7e9283b66cab94c7.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,14 +11,14 @@ metadata={
 
 [deps]
 
-source_file="res://Maps/skybox.png"
-dest_files=["res://.godot/imported/skybox.png-788532a148ac9d8d92331274c1455618.s3tc.ctex"]
+source_file="res://maps/1MOrange.png"
+dest_files=["res://.godot/imported/1MOrange.png-dd6bbc8c02bd8f4b7e9283b66cab94c7.s3tc.ctex"]
 
 [params]
 
 compress/mode=2
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=1.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0

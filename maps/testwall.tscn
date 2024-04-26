@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://dafis5qfnarri"]
 
-[ext_resource type="Shader" uid="uid://bwk81aclo0uf" path="res://Maps/TESTMAT.tres" id="2_xcjur"]
+[ext_resource type="Shader" uid="uid://bwk81aclo0uf" path="res://maps/TESTMAT.tres" id="2_xcjur"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vxnho"]
 render_priority = 0

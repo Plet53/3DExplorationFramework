@@ -1,9 +1,9 @@
 [gd_scene load_steps=24 format=3 uid="uid://btfyx0y1l7uoo"]
 
-[ext_resource type="PackedScene" uid="uid://dh80ihw4evyu2" path="res://Player/MAIN_GUY.tscn" id="2"]
-[ext_resource type="Shader" uid="uid://bwk81aclo0uf" path="res://Maps/TESTMAT.tres" id="3"]
-[ext_resource type="PackedScene" uid="uid://dafis5qfnarri" path="res://Maps/testwall.tscn" id="4_3bek6"]
-[ext_resource type="PhysicsMaterial" uid="uid://d0dqjugfnsjnd" path="res://CommonMaterials/test_physics_material.tres" id="5_emuwh"]
+[ext_resource type="PackedScene" uid="uid://dh80ihw4evyu2" path="res://player/MAIN_GUY.tscn" id="2"]
+[ext_resource type="Shader" uid="uid://bwk81aclo0uf" path="res://maps/TESTMAT.tres" id="3"]
+[ext_resource type="PackedScene" uid="uid://dafis5qfnarri" path="res://maps/testwall.tscn" id="4_3bek6"]
+[ext_resource type="PhysicsMaterial" uid="uid://d0dqjugfnsjnd" path="res://common_materials/test_physics_material.tres" id="5_emuwh"]
 
 [sub_resource type="ShaderMaterial" id="15"]
 render_priority = 0

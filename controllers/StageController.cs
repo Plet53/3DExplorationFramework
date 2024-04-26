@@ -24,7 +24,11 @@ public partial class StageController : Node
 	}
 
 	public void ResetLevel() {
-		// TODO
+		// loadedLevel should always hold exactly the currently loaded level object and nothing else.
+		Node3D levelNode = loadedLevel.GetChild<Node3D>(0);
+		levelNode.Dispose();
+		Node newLevel = ResourceLoader.Load<PackedScene>("").Instantiate();
+		loadedLevel.AddChild(newLevel);
 	}
 
 	public void Quit() {

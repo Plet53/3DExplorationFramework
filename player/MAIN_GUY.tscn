@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://dh80ihw4evyu2"]
 
 [ext_resource type="Environment" uid="uid://bg53hwfrw1he1" path="res://default_env.tres" id="1"]
-[ext_resource type="Shader" uid="uid://bwk81aclo0uf" path="res://Maps/TESTMAT.tres" id="2"]
-[ext_resource type="Script" path="res://Player/MAIN_GUY.cs" id="3"]
-[ext_resource type="Script" path="res://Player/CameraControl.cs" id="4"]
+[ext_resource type="Shader" uid="uid://bwk81aclo0uf" path="res://maps/TESTMAT.tres" id="2"]
+[ext_resource type="Script" path="res://player/MAIN_GUY.cs" id="3"]
+[ext_resource type="Script" path="res://player/CameraControl.cs" id="4"]
 
 [sub_resource type="CapsuleShape3D" id="5"]
 

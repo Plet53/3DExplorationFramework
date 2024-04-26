@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="3dExplorerFramework"
-run/main_scene="res://Controllers/stage_controller.tscn"
+run/main_scene="res://controllers/stage_controller.tscn"
 config/features=PackedStringArray("4.2", "C#")
 config/icon="res://icon.png"
 
