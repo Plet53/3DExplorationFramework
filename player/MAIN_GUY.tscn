@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://dh80ihw4evyu2"]
 
-[ext_resource type="Script" path="res://player/MAIN_GUY.cs" id="1_8aelu"]
+[ext_resource type="Script" uid="uid://dujyd2rxupy57" path="res://player/MAIN_GUY.cs" id="1_8aelu"]
 [ext_resource type="Shader" uid="uid://bwk81aclo0uf" path="res://maps/TESTMAT.tres" id="2_ok4a7"]
-[ext_resource type="Script" path="res://player/CameraControl.cs" id="3_est8m"]
+[ext_resource type="Script" uid="uid://ceu015ks8ekkm" path="res://player/CameraControl.cs" id="3_est8m"]
 [ext_resource type="Environment" uid="uid://bg53hwfrw1he1" path="res://default_env.tres" id="4_h4foc"]
 
 [sub_resource type="CapsuleShape3D" id="5"]
@@ -23,7 +23,7 @@ points = PackedVector3Array(0, 0, 0, 0.834, 0.8, 0.92, -0.83, 0.8, 0.92, 0.83, -
 process_physics_priority = 5
 input_ray_pickable = false
 floor_block_on_wall = false
-floor_max_angle = 0.523599
+floor_max_angle = 1.0472
 script = ExtResource("1_8aelu")
 _accel = 4.0
 max_speed = 40.0
