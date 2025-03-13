@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dafis5qfnarri"]
+[gd_scene load_steps=12 format=4 uid="uid://dafis5qfnarri"]
 
 [ext_resource type="Shader" uid="uid://bwk81aclo0uf" path="res://maps/TESTMAT.tres" id="2_xcjur"]
 
@@ -11,11 +11,11 @@ _surfaces = [{
 "aabb": AABB(-1, 0, -1, 2, 1e-05, 2.00001),
 "format": 34896613377,
 "index_count": 6,
-"index_data": PackedByteArray(1, 0, 0, 0, 2, 0, 1, 0, 2, 0, 3, 0),
+"index_data": PackedByteArray("AQAAAAIAAQACAAMA"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 4,
-"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 0, 0, 255, 255, 0, 0, 254, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0)
+"vertex_data": PackedByteArray("AAAAAP7/AAD//wAA/v8AAAAAAAAAAAAA//8AAAAAAAA=")
 }]
 blend_shape_mode = 0
 
@@ -23,15 +23,15 @@ blend_shape_mode = 0
 resource_name = "testwall_Plane"
 _surfaces = [{
 "aabb": AABB(-1, 0, -1, 2, 1e-05, 2.00001),
-"attribute_data": PackedByteArray(0, 0, 255, 255, 255, 255, 255, 255, 0, 0, 0, 0, 255, 255, 0, 0),
+"attribute_data": PackedByteArray("AAD///////8AAAAA//8AAA=="),
 "format": 34896613399,
 "index_count": 6,
-"index_data": PackedByteArray(1, 0, 0, 0, 2, 0, 1, 0, 2, 0, 3, 0),
+"index_data": PackedByteArray("AQAAAAIAAQACAAMA"),
 "material": SubResource("ShaderMaterial_vxnho"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 4,
-"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 255, 191, 255, 255, 0, 0, 254, 255, 255, 191, 0, 0, 0, 0, 0, 0, 255, 191, 255, 255, 0, 0, 0, 0, 255, 191, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
+"vertex_data": PackedByteArray("AAAAAP7//7///wAA/v//vwAAAAAAAP+///8AAAAA/7////9/////f////3////9/")
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_48vvq")
@@ -49,12 +49,12 @@ _surfaces = [{
 "aabb": AABB(-2.22725, -1.19269, -2.22725, 4.4545, 0.612192, 4.4545),
 "format": 34896613377,
 "index_count": 30,
-"index_data": PackedByteArray(2, 0, 1, 0, 0, 0, 2, 0, 7, 0, 3, 0, 0, 0, 5, 0, 4, 0, 3, 0, 5, 0, 1, 0, 0, 0, 6, 0, 2, 0, 2, 0, 3, 0, 1, 0, 2, 0, 6, 0, 7, 0, 0, 0, 1, 0, 5, 0, 3, 0, 7, 0, 5, 0, 0, 0, 4, 0, 6, 0),
-"lods": [0.96259, PackedByteArray(6, 0, 7, 0, 3, 0, 3, 0, 7, 0, 5, 0, 6, 0, 3, 0, 5, 0, 6, 0, 5, 0, 4, 0)],
+"index_data": PackedByteArray("AgABAAAAAgAHAAMAAAAFAAQAAwAFAAEAAAAGAAIAAgADAAEAAgAGAAcAAAABAAUAAwAHAAUAAAAEAAYA"),
+"lods": [0.96259, PackedByteArray("BgAHAAMAAwAHAAUABgADAAUABgAFAAQA")],
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 8,
-"vertex_data": PackedByteArray(135, 70, 253, 255, 119, 185, 0, 0, 119, 185, 253, 255, 119, 185, 0, 0, 135, 70, 253, 255, 135, 70, 0, 0, 119, 185, 253, 255, 135, 70, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0)
+"vertex_data": PackedByteArray("h0b9/3e5AAB3uf3/d7kAAIdG/f+HRgAAd7n9/4dGAAAAAAAA//8AAP//AAD//wAAAAAAAAAAAAD//wAAAAAAAA==")
 }]
 blend_shape_mode = 0
 
@@ -62,16 +62,16 @@ blend_shape_mode = 0
 resource_name = "testwall_Plane_001"
 _surfaces = [{
 "aabb": AABB(-2.22725, -1.19269, -2.22725, 4.4545, 0.612192, 4.4545),
-"attribute_data": PackedByteArray(0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 255, 255, 255, 255, 255, 255, 0, 0, 0, 0, 255, 255, 0, 0),
+"attribute_data": PackedByteArray("AAD//wAA//8AAP//////////////////AAAAAAAAAAAAAAAA//8AAP//AAD//wAAAAD//wAA/////////////wAAAAAAAAAA//8AAP//AAD//wAAAAD///////8AAAAA//8AAA=="),
 "format": 34896613399,
 "index_count": 30,
-"index_data": PackedByteArray(8, 0, 4, 0, 2, 0, 7, 0, 18, 0, 9, 0, 1, 0, 14, 0, 13, 0, 11, 0, 15, 0, 5, 0, 0, 0, 16, 0, 6, 0, 8, 0, 10, 0, 4, 0, 7, 0, 17, 0, 18, 0, 1, 0, 3, 0, 14, 0, 11, 0, 19, 0, 15, 0, 0, 0, 12, 0, 16, 0),
-"lods": [0.96259, PackedByteArray(23, 0, 24, 0, 20, 0, 20, 0, 24, 0, 22, 0, 23, 0, 20, 0, 22, 0, 23, 0, 22, 0, 21, 0)],
+"index_data": PackedByteArray("CAAEAAIABwASAAkAAQAOAA0ACwAPAAUAAAAQAAYACAAKAAQABwARABIAAQADAA4ACwATAA8AAAAMABAA"),
+"lods": [0.96259, PackedByteArray("FwAYABQAFAAYABYAFwAUABYAFwAWABUA")],
 "material": SubResource("ShaderMaterial_3dgr6"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 25,
-"vertex_data": PackedByteArray(135, 70, 253, 255, 119, 185, 255, 191, 135, 70, 253, 255, 119, 185, 218, 82, 135, 70, 253, 255, 119, 185, 255, 191, 119, 185, 253, 255, 119, 185, 218, 82, 119, 185, 253, 255, 119, 185, 255, 191, 119, 185, 253, 255, 119, 185, 255, 191, 135, 70, 253, 255, 135, 70, 255, 191, 135, 70, 253, 255, 135, 70, 217, 210, 135, 70, 253, 255, 135, 70, 255, 191, 119, 185, 253, 255, 135, 70, 217, 210, 119, 185, 253, 255, 135, 70, 255, 191, 119, 185, 253, 255, 135, 70, 255, 191, 0, 0, 0, 0, 255, 255, 255, 191, 0, 0, 0, 0, 255, 255, 218, 82, 255, 255, 0, 0, 255, 255, 218, 82, 255, 255, 0, 0, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 255, 191, 0, 0, 0, 0, 0, 0, 217, 210, 255, 255, 0, 0, 0, 0, 217, 210, 255, 255, 0, 0, 0, 0, 255, 191, 119, 185, 253, 255, 135, 70, 20, 200, 0, 0, 0, 0, 255, 255, 185, 182, 255, 255, 0, 0, 255, 255, 212, 67, 0, 0, 0, 0, 0, 0, 188, 199, 255, 255, 0, 0, 0, 0, 208, 201, 151, 231, 103, 152, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 151, 231, 151, 103, 151, 231, 103, 152, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 151, 231, 151, 103, 151, 231, 103, 152, 255, 255, 255, 127, 255, 255, 255, 127, 151, 231, 151, 103, 151, 231, 103, 152, 255, 255, 255, 127, 255, 255, 255, 127, 151, 231, 151, 103, 137, 245, 137, 117, 0, 244, 253, 139, 13, 247, 14, 119, 43, 249, 211, 134, 251, 241, 251, 113)
+"vertex_data": PackedByteArray("h0b9/3e5/7+HRv3/d7naUodG/f93uf+/d7n9/3e52lJ3uf3/d7n/v3e5/f93uf+/h0b9/4dG/7+HRv3/h0bZ0odG/f+HRv+/d7n9/4dG2dJ3uf3/h0b/v3e5/f+HRv+/AAAAAP///78AAAAA///aUv//AAD//9pS//8AAP///78AAAAAAAD/vwAAAAAAANnS//8AAAAA2dL//wAAAAD/v3e5/f+HRhTIAAAAAP//ubb//wAA///UQwAAAAAAALzH//8AAAAA0MmX52eY////f////3////9/////f5fnl2eX52eY////f////3////9/////f5fnl2eX52eY////f////3+X55dnl+dnmP///3////9/l+eXZ4n1iXUA9P2LDfcOdyv504b78ftx")
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_3bk7o")
@@ -91,7 +91,7 @@ backface_collision = true
 [node name="testwall" type="Node3D"]
 
 [node name="WALL" type="MeshInstance3D" parent="."]
-transform = Transform3D(0, -4.99909, 0, 4.99909, 0, 0, 0, 0, 4.99909, 0, 0, 0)
+transform = Transform3D(0, -4.99909, 0, -2.18517e-07, 0, -4.99909, 4.99909, 0, -2.18517e-07, 0, 0, 0)
 mesh = SubResource("ArrayMesh_tknb6")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_wd0gx")
