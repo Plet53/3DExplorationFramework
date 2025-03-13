@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://3o765yqi7cfs"]
 
-[ext_resource type="Script" path="res://controllers/StageController.cs" id="1_lpuma"]
+[ext_resource type="Script" uid="uid://btmvibrjkxrmm" path="res://controllers/StageController.cs" id="1_lpuma"]
 [ext_resource type="PackedScene" uid="uid://btfyx0y1l7uoo" path="res://maps/TESTMAP.tscn" id="2_4rnma"]
 [ext_resource type="PackedScene" uid="uid://l2x8kv78yjqw" path="res://controllers/pause_menu.tscn" id="2_s64k3"]
 

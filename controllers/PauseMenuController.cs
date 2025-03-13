@@ -18,5 +18,5 @@ public partial class PauseMenuController : Control
 
   public void Quit() {
     stageController.Quit();
-  } 
+  }
 }

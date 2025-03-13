@@ -26,8 +26,8 @@ public partial class StageController : Node
 	public void ResetLevel() {
 		// loadedLevel should always hold exactly the currently loaded level object and nothing else.
 		Node3D levelNode = loadedLevel.GetChild<Node3D>(0);
-		levelNode.Free();
 		Node newLevel = ResourceLoader.Load<PackedScene>("res://maps/TESTMAP.tscn").Instantiate();
+		levelNode.Free();
 		newLevel.Name = "TESTMAP";
 		loadedLevel.AddChild(newLevel);
 	}
