@@ -50,25 +50,21 @@ public partial class CameraControl : Node3D
 		} 
 	}
 
-	// Called in response to Input Events
-  public override void _Input(InputEvent ie) {
-		// Discard anything we haven't set an action for
-		if (ie.IsActionType()) {
-			// Prevent hard button actions if one is already occuring
-			if (moveTimer.TimeLeft == 0f) {
-				if (ie.GetActionStrength("cam_reset") > 0f) {
-					moveTimer.Start(1.0d);
-					intent = "reset";
-					targetRotation = player.Rotation + initialRotation;
-				}
-				if (ie.GetActionStrength("cam_first_person") > 0f) {
-					moveTimer.Start(1.0d);
-					intent = fullControl ? "into_third" : "into_first";
-					fullControl = !fullControl;
-				}
-			}
+  public void _ToggleFirstPerson() {
+		if (moveTimer.TimeLeft == 0f) {
+			moveTimer.Start(1.0d);
+			intent = fullControl ? "into_third" : "into_first";
+			fullControl = !fullControl;
 		}
   }
+
+	public void _CameraReset() {
+		if (moveTimer.TimeLeft == 0f) {
+			moveTimer.Start(1.0d);
+			intent = "reset";
+			targetRotation = player.Rotation + initialRotation;
+		}
+	}
 
 	// Called once per Physics Tickrate per second
   public override void _PhysicsProcess(double d) {
@@ -89,19 +85,12 @@ public partial class CameraControl : Node3D
 		return degrees * (Mathf.Pi / 180f);
 	}
 
-	public void IntentReset() {
-		if (intent == "into_third") {
-			player.ResetAction();
-		}
-		intent = "";
-	}
-
 	void RotateToTarget(Vector3 target, float delta) {
 		Rotation = Rotation.Lerp(target, delta);
 		if (Math.Abs(Rotation.Y - target.Y) < .001f) {
 			Rotation = target;
 			moveTimer.Stop();
-			IntentReset();
+			intent = "";
 		}
 	}
 
@@ -110,7 +99,7 @@ public partial class CameraControl : Node3D
 		if (playerCamera.Position.DistanceSquaredTo(target) < .001f) {
 			playerCamera.Position = target;
 			moveTimer.Stop();
-			IntentReset();
+			intent = "";
 		}
 	}
 }

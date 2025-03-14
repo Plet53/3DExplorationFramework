@@ -19,10 +19,16 @@ public partial class MAIN_GUY : CharacterBody3D {
 		Knockback
 	}
 
+	[Signal]
+	delegate void CameraResetEventHandler();
+	[Signal]
+	delegate void ToggleFirstPersonEventHandler();
+
   [Export(PropertyHint.Range, "1,100,or_greater")]
   private float _accel, max_speed, gravity, max_rot, jump_vol;
   [Export(PropertyHint.Range, "-100,-1,or_lesser")]
   private float term_vol;
+	private float max_speed_modifier = 1.0f;
   private float speed;
 	[Export]
 	private ActionState action_state;
@@ -77,8 +83,19 @@ public partial class MAIN_GUY : CharacterBody3D {
 					wall = Vector3.Zero;
 				}
 			}
-			if (ie.GetActionStrength("cam_first_person") > 0f && action_state == ActionState.Standing) {
-				action_state = ActionState.Looking;
+			if (ie.GetActionStrength("cam_first_person") > 0f) {
+				if (action_state == ActionState.Standing) {
+					action_state = ActionState.Looking;
+					GD.Print("Into First " + action_state);
+					EmitSignal("ToggleFirstPerson");
+				} else if (action_state == ActionState.Looking) {
+					action_state = ActionState.Standing;
+					GD.Print("Into Third " + action_state);
+					EmitSignal("ToggleFirstPerson");
+				}
+			}
+			if (ie.GetActionStrength("cam_reset") > 0f) {
+				EmitSignal("CameraReset");
 			}
 		}
   }
@@ -86,17 +103,19 @@ public partial class MAIN_GUY : CharacterBody3D {
   public override void _PhysicsProcess(double d) {
 		// Pre-Limited, Thanks Godot
 		inp = Input.GetVector("game_right", "game_left", "game_backward", "game_forward");
-		if (!(action_state == ActionState.Knockback && action_state == ActionState.Looking)) {
+		if (!(action_state == ActionState.Knockback || action_state == ActionState.Looking)) {
 			HandleMovementInput(inp);
 		}
 		// This check needs to happen after movement so jumping is a thing that always happens.
 		// The collision engine *should* take care of the rest.
-		if (IsOnFloor()) {
-			vel.Y = 0;
-			grounded = true;
-			SetGroundActionFromSpeed();
-		} else {
-			CheckForClimbing();
+		if (action_state != ActionState.Looking) {
+			if (IsOnFloor()) {
+				vel.Y = 0;
+				grounded = true;
+				SetGroundActionFromSpeed();
+			} else {
+				CheckForClimbing();
+			}
 		}
   }
 
@@ -149,7 +168,6 @@ public partial class MAIN_GUY : CharacterBody3D {
 	public void ResetAction() {
 		action_state = ActionState.Standing;
 	}
-
 
 	public void SetGroundActionFromSpeed() {
 		if (speed == 0f) {
